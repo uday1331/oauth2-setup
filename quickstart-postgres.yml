@@ -1,16 +1,4 @@
-###########################################################################
-#######             FOR DEMONSTRATION PURPOSES ONLY                 #######
-###########################################################################
-#                                                                         #
-# If you have not yet read the tutorial, do so now:                       #
-#  https://www.ory.sh/docs/hydra/5min-tutorial                            #
-#                                                                         #
-# This set up is only for demonstration purposes. The login               #
-# endpoint can only be used if you follow the steps in the tutorial.      #
-#                                                                         #
-###########################################################################
-
-version: '3'
+version: '3.4'
 
 services:
 
@@ -23,6 +11,7 @@ services:
     restart: on-failure
 
   hydra:
+    hostname: hydra
     depends_on:
       - hydra-migrate
     environment:

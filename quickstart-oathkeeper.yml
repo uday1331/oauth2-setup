@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  oathkeeper:
+    build: 
+      context: ./reverseproxy-oathkeeper/
+    hostname: oathkeeper
+    ports:
+      - "4455:4455"
+      - "4456:4456"
+    command:
+        serve --config=/config.yaml

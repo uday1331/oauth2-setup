@@ -14,6 +14,7 @@ FROM scratch
 COPY --from=0 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=0 /etc/nsswitch.conf /etc/nsswitch.conf
 COPY hydra /usr/bin/hydra
+ADD config.yaml /config.yaml
 
 USER 1000
 
