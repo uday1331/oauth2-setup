@@ -2,11 +2,11 @@
   {
     "id": "connect-to-serice",
     "upstream": {
-      "url": "urlToService",
+      "url": "https://postman-echo.com/",
       "preserve_host":true
     },
     "match": {
-      "url": "http://<.*>",
+      "url": "http://<127.0.0.1|localhost>:4455/<.*>",
       "methods": [
         "GET"
       ]

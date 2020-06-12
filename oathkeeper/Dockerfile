@@ -1,4 +1,4 @@
-FROM oryd/oathkeeper:v0.38.2-beta.1
+FROM oryd/oathkeeper:v0.38.2-beta.1-alpine
 
 ADD config.yaml /config.yaml
 ADD rules.json /rules.json
