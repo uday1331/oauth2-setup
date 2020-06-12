@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   hydra-migrate:
-    image: oryd/hydra:1.5.0
+    image: oryd/hydra:v1.5.0-alpine
     environment:
       - DSN=postgres://hydra:secret@postgresd:5432/hydra?sslmode=disable&max_conns=20&max_idle_conns=4
     command:

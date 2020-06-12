@@ -9,7 +9,7 @@ services:
       - "4445:4445" # Admin port
       - "5555:5555" # Port for hydra token user
     volumes:
-        - ~/hydra-demo/config:/home
+        - ./hydra:/home
     command:
       serve all --dangerous-force-http --config=/home/config.yaml
     environment:
