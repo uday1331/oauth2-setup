@@ -1,0 +1,9 @@
+version: "3.4"
+
+services:
+  service:
+    build:
+      context: ./server/
+    hostname: service
+    ports:
+      - "3001:3001"

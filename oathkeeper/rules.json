@@ -1,23 +1,21 @@
-[   
+[
   {
     "id": "connect-to-serice",
     "upstream": {
-      "url": "https://postman-echo.com/",
-      "preserve_host":true
+      "url": "http://service:3001/",
+      "preserve_host": true
     },
     "match": {
       "url": "http://<127.0.0.1|localhost>:4455/<.*>",
-      "methods": [
-        "GET"
-      ]
+      "methods": ["GET"]
     },
     "authenticators": [{ "handler": "noop" }],
     "authorizer": { "handler": "allow" },
     "mutators": [{ "handler": "noop" }],
     "errors": [
-        {
-          "handler": "json"
-        }
-      ]
+      {
+        "handler": "json"
+      }
+    ]
   }
 ]
