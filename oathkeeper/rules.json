@@ -11,7 +11,15 @@
     },
     "authenticators": [{ "handler": "noop" }],
     "authorizer": { "handler": "allow" },
-    "mutators": [{ "handler": "noop" }],
+    "mutators": [
+      {
+        "handler": "id_token",
+        "config": {
+          "issuer_url": "http://localhost:3001/",
+          "jwks_url": "file:///jwks.json"
+        }
+      }
+    ],
     "errors": [
       {
         "handler": "json"

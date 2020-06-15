@@ -33,11 +33,8 @@ authorizers:
     enabled: true
 
 mutators:
-  noop:
-    enabled: true
   id_token:
     enabled: true
     config:
       issuer_url: http://localhost:4455/
       jwks_url: file:///jwks.json
-
