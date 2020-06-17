@@ -25,8 +25,10 @@ errors:
         to: https://www.ory.sh/docs
 
 authenticators:
-  noop:
+  oauth2_introspection:
     enabled: true
+    config:
+      introspection_url: http://hydra:4445/oauth2/introspect
 
 authorizers:
   allow:
@@ -36,5 +38,5 @@ mutators:
   id_token:
     enabled: true
     config:
-      issuer_url: http://localhost:4455/
+      issuer_url: http://hydra:4444/
       jwks_url: file:///jwks.json

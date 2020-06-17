@@ -9,13 +9,20 @@
       "url": "http://<127.0.0.1|localhost>:4455/<.*>",
       "methods": ["GET"]
     },
-    "authenticators": [{ "handler": "noop" }],
+    "authenticators": [
+      {
+        "handler": "oauth2_introspection",
+        "config": {
+          "introspection_url": "http://hydra:4445/oauth2/introspect"
+        }
+      }
+    ],
     "authorizer": { "handler": "allow" },
     "mutators": [
       {
         "handler": "id_token",
         "config": {
-          "issuer_url": "http://localhost:3001/",
+          "issuer_url": "http://hydra:4444/",
           "jwks_url": "file:///jwks.json"
         }
       }

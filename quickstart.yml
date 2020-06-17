@@ -1,17 +1,16 @@
-version: '3.4'
+version: "3.4"
 
 services:
-
   hydra:
     image: oryd/hydra:v1.5.0-alpine
     ports:
       - "4444:4444" # Public port
       - "4445:4445" # Admin port
       - "5555:5555" # Port for hydra token user
+    hostname: hydra
     volumes:
-        - ./hydra:/home
-    command:
-      serve all --dangerous-force-http --config=/home/config.yaml
+      - ./hydra:/home
+    command: serve all --dangerous-force-http --config=/home/config.yaml
     environment:
       - URLS_SELF_ISSUER=http://127.0.0.1:4444
       - URLS_CONSENT=http://127.0.0.1:3000/consent
